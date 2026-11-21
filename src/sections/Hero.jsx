@@ -66,7 +66,7 @@ export function Hero() {
           >
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-acid">About</p>
             <h2 id="hero-about-title" className="mt-3 text-2xl font-semibold tracking-[-0.025em]">
-              Building practical software.
+              Building software for people.
             </h2>
             <p className="mt-4 leading-relaxed text-mist">{resume.person.summary}</p>
             <p className="mt-5 font-mono text-xs uppercase tracking-[0.14em] text-paper/70">

@@ -33,32 +33,33 @@ export function Projects() {
                   <h3 className="mt-5 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-5xl">
                     {project.title}
                   </h3>
-                  <div className="mt-8">
-                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/65">Technology</p>
-                    <p className="mt-3 text-lg text-ink/80">{project.stack.join(' / ')}</p>
-                  </div>
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <MagneticButton href={project.source} ariaLabel={`View source code for ${project.title}`}>
+                  {project.stack?.length > 0 && (
+                    <div className="mt-8">
+                      <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/65">Technology</p>
+                      <p className="mt-3 text-lg text-ink/80">{project.stack.join(' / ')}</p>
+                    </div>
+                  )}
+                  {(project.source || project.demo) && <div className="mt-8 flex flex-wrap gap-3">
+                    {project.source && <MagneticButton href={project.source} ariaLabel={`View source code for ${project.title}`}>
                       Source code
-                    </MagneticButton>
+                    </MagneticButton>}
                     {project.demo && (
                       <MagneticButton href={project.demo} variant="outline" ariaLabel={`Open live demo of ${project.title}`}>
                         Live demo
                       </MagneticButton>
                     )}
-                  </div>
+                  </div>}
                 </div>
                 <div className="space-y-7 lg:col-span-7">
                   <ProjectDetail label="Problem" text={project.problem} />
                   <ProjectDetail label="Architecture" text={project.architecture} />
-                  <div className="grid gap-3 border-t border-ink/15 pt-5 sm:grid-cols-3">
+                  {project.decisions?.length > 0 && <div className="grid gap-3 border-t border-ink/15 pt-5 sm:grid-cols-3">
                     <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/60">Key decisions</p>
                     <ul className="space-y-3 leading-relaxed text-ink/80 sm:col-span-2">
                       {project.decisions.map((decision) => <li key={decision}>{decision}</li>)}
                     </ul>
-                  </div>
+                  </div>}
                   <ProjectDetail label="Results" text={project.results} />
-                  <ProjectDetail label="Demo" text={project.demo ? 'Live demo available.' : 'Live demo not provided in the source résumé.'} />
                 </div>
               </div>
             </motion.article>
@@ -70,6 +71,8 @@ export function Projects() {
 }
 
 function ProjectDetail({ label, text }) {
+  if (!text) return null
+
   return (
     <div className="grid gap-3 border-t border-ink/15 pt-5 sm:grid-cols-3">
       <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/60">{label}</p>

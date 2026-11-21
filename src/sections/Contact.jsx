@@ -15,9 +15,9 @@ export function Contact() {
         className="page-shell relative z-10 text-center"
       >
         <p className="font-mono text-sm uppercase tracking-[0.22em] text-acid">06 / Contact</p>
-        <h2 id="contact-title" className="mx-auto mt-6 max-w-5xl text-balance text-5xl font-semibold leading-[0.9] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
+        <h2 id="contact-title" className="mx-auto mt-6 max-w-5xl text-balance text-5xl font-semibold leading-[0.9] tracking-[-0.055em] sm:text-7xl lg:text-8xl">{'Let’s build something together.'}{/*
           Let’s build something practical.
-        </h2>
+        */}</h2>
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-mist">
           Reach out by email, or find more of my work and professional background online.
         </p>

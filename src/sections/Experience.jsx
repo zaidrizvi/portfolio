@@ -18,7 +18,7 @@ export function Experience() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <SectionHeading index="02" eyebrow="Experience" title="Built in real teams, shipped for real users." tone="light" />
+          <SectionHeading index="02" eyebrow="Experience" title="Experience." tone="light" />
         </motion.div>
         <div ref={timelineRef} className="relative ml-2 border-l border-ink/20 pl-8 sm:ml-4 sm:pl-12">
           <motion.div
